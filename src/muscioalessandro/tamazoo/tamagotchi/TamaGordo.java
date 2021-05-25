@@ -1,6 +1,15 @@
 package muscioalessandro.tamazoo.tamagotchi;
 
 public class TamaGordo extends TamaBase {
+  /**
+   * Crea un oggetto della classe <strong>TamaGordo</strong> specificando il
+   * <em>nome</em>, il grado di <em>soddisfazione</em> e il grado di
+   * <em>sazietà</em>
+   * 
+   * @param nome          Indica il nome del <em>tamabase</em>
+   * @param soddisfazione Indica il grado di soddisfazione del <em>tamabase</em>
+   * @param sazieta       Indica il grado di sazietà del <em>tamabase</em>
+   */
   public TamaGordo(String nome, int soddisfazione, int sazieta) {
     super(nome, soddisfazione, sazieta);
   }

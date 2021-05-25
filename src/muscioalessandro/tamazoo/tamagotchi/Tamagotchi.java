@@ -10,11 +10,32 @@ package muscioalessandro.tamazoo.tamagotchi;
  * @version 1.0
  */
 public interface Tamagotchi {
+  /**
+   * Indica la percentuale con cui aumentare la sazietà per ogni biscotto che
+   * viene dato al tamagotchi
+   */
   static final int AUMENTO_PER_BISCOTTO = 10;
+  /**
+   * Indica il valore che, moltiplicato al numero di carezze, va tolto alla
+   * sazietà
+   */
   static final double DIMINUZIONE_SAZIETA = .5;
+  /**
+   * Indica il valore che, moltiplicato al numero di biscotti, va tolto alla
+   * soddisfazione
+   */
   static final double DIMINUZIONE_SODDISFAZIONE = .25;
+  /**
+   * Indica la soglia di soddisfazione sotto la quale il tamagotchi è infelice
+   */
   static final int SOGLIA_INFELICITA_SODDISFAZIONE = 30;
+  /**
+   * Indica la soglia di sazietà sotto la quale il tamagotchi è infelice
+   */
   static final int SOGLIA_INFELICITA_SAZIETA_MINORE = 30;
+  /**
+   * Indica la soglia di sazietà sopra la quale il tamagotchi è infelice
+   */
   static final int SOGLIA_INFELICITA_SAZIETA_MAGGIORE = 90;
   /**
    * Indica il <strong>valore massimo</strong> della <em>sazietà</em> o della
