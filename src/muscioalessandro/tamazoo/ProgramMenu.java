@@ -25,9 +25,19 @@ public class ProgramMenu extends Menu {
 
     for (int i = 0; i < numero_massimo_tamagotchi; i++) {
       nome = InputDati.leggiStringaNonVuota(String.format(OutputStringhe.INSERT_NOME_TAMAGOTCHI, (i + 1)), true);
-      specie = Specie.values()[EstrazioniCasuali.estraiIntero(0, (Specie.values().length - 1))].ordinal();
+      specie = EstrazioniCasuali.estraiIntero(0, (Specie.values().length - 1));
 
       tamazoo.add(TamaBuilder.creaTamagotchi(specie, nome));
     }
+
+    System.out.println(OutputStringhe.MSG_INSERIMENTO_TAMAGOTCHI_COMPLETATO);
+  }
+
+  public void daiCarezze(int numero_massimo_tamagotchi) {
+    TamaBase current_tamagotchi;
+    int numero_carezze;
+
+    current_tamagotchi = tamazoo.get(numero_massimo_tamagotchi);
+    numero_carezze = InputDati.leggiInteroCompreso("", 0, )
   }
 }
