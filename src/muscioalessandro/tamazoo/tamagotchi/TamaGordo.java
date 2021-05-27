@@ -19,6 +19,9 @@ public class TamaGordo extends TamaBase {
     setSoddisfazione(VALORE_MASSIMO_GRADI);
 
     setSazieta(getSazieta() - ((int) ((numero_carezze * DIMINUZIONE_SAZIETA) * 2)));
+
+    if (getSazieta() < VALORE_MINIMO_GRADI)
+      setSazieta(VALORE_MINIMO_GRADI);
   }
 
   @Override

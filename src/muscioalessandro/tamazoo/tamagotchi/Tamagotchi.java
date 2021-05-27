@@ -14,7 +14,12 @@ public interface Tamagotchi {
    * Indica la percentuale con cui aumentare la sazietà per ogni biscotto che
    * viene dato al tamagotchi
    */
-  static final int AUMENTO_PER_BISCOTTO = 10;
+  static final int AUMENTO_PER_BISCOTTO = 10;  
+  /**
+   * Indica la percentuale con cui aumentare la soddisfazione per ogni carezza che
+   * viene data al tamagotchi
+   */
+  static final int AUMENTO_PER_CAREZZA = 10;
   /**
    * Indica il valore che, moltiplicato al numero di carezze, va tolto alla
    * sazietà

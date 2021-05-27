@@ -33,11 +33,52 @@ public class ProgramMenu extends Menu {
     System.out.println(OutputStringhe.MSG_INSERIMENTO_TAMAGOTCHI_COMPLETATO);
   }
 
-  public void daiCarezze(int numero_massimo_tamagotchi) {
+  public void stampaTamazoo() {
     TamaBase current_tamagotchi;
-    int numero_carezze;
+    int i;
 
-    current_tamagotchi = tamazoo.get(numero_massimo_tamagotchi);
-    numero_carezze = InputDati.leggiInteroCompreso("", 0, )
+    for (i = 0; i < tamazoo.size(); i++) {
+      current_tamagotchi = tamazoo.get(i);
+
+      if (current_tamagotchi.isMorto()) {
+        tamazoo.remove(current_tamagotchi);
+        i--;
+      } else {
+        System.out.println(current_tamagotchi);
+      }
+    }
+  }
+
+  public void accarezzaTamazoo() {
+    int massimo = Math.floorDiv(Tamagotchi.VALORE_MASSIMO_GRADI, Tamagotchi.AUMENTO_PER_CAREZZA);
+    int numero_carezze = EstrazioniCasuali.estraiIntero(1, massimo);
+
+    for (TamaBase tamagotchi : tamazoo) {
+      tamagotchi.riceviCarezze(numero_carezze);
+
+      if (tamagotchi.isMorto())
+        System.out.println(String.format(OutputStringhe.MSG_MORTE_TAMAGOTCHI, tamagotchi.getNome()));
+    }
+  }
+
+  public void nutriTamazoo() {
+    int massimo = Math.floorDiv(Tamagotchi.VALORE_MASSIMO_GRADI, Tamagotchi.AUMENTO_PER_BISCOTTO);
+    int numero_biscotti = EstrazioniCasuali.estraiIntero(1, massimo);
+
+    for (TamaBase tamagotchi : tamazoo) {
+      tamagotchi.riceviBiscotti(numero_biscotti);
+
+      if (tamagotchi.isMorto())
+        System.out.println(String.format(OutputStringhe.MSG_MORTE_TAMAGOTCHI, tamagotchi.getNome()));
+    }
+  }
+
+  public boolean verificaMorteTamazoo() {
+    for (TamaBase tamagotchi : tamazoo) {
+      if (!tamagotchi.isMorto())
+        return false;
+    }
+
+    return true;
   }
 }

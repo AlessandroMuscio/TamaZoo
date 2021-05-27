@@ -97,7 +97,7 @@ public class TamaBase implements Tamagotchi {
 
   @Override
   public void riceviCarezze(int numero_carezze) {
-    soddisfazione += numero_carezze;
+    soddisfazione += (numero_carezze * AUMENTO_PER_CAREZZA);
     sazieta -= (int) (numero_carezze * DIMINUZIONE_SAZIETA);
 
     if (soddisfazione > VALORE_MASSIMO_GRADI)
